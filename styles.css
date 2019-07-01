@@ -1,0 +1,29 @@
+body{
+    text-align: center;
+    background: black;
+    font-family: sans-serif;
+    font-weight: 100;
+}
+
+#clockdivText{
+    font-family: sans-serif;
+    color: red;
+    font-weight: 100;
+    text-align: center;
+    font-size: 140px;
+}
+
+#currentTime{
+    font-family: sans-serif;
+    color: white;
+    font-weight: 100;
+    text-align: right;
+    font-size: 120px;
+}
+#clockdiv{
+    font-family: sans-serif;
+    color: red;
+    font-weight: 100;
+    text-align: center;
+    font-size: 240px;
+}
