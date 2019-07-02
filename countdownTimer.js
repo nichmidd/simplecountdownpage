@@ -74,7 +74,9 @@ function initializeClock(id, endtime) {
     updateClock();
     var timeinterval = setInterval(updateClock, 1000);
 }
+
 var raceEvents = JSON.parse(events);
-console.log(raceEvents)
+document.getElementById("header").innerHTML = title;
+document.getElementById("footer").innerHTML = "<h3>"+footer+"</h3>";
 var deadline = new Date(Date.parse(raceEvents[0].starttime));
 initializeClock('clockdiv', deadline);

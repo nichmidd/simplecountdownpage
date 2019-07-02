@@ -49,3 +49,51 @@ table, th, td {
     text-align: left;
     font-size: 40px;
 }
+
+.footerDiv {
+    position : absolute;
+    bottom : 0;
+    height : 80px;
+    width: 100%;
+    font-weight: 100;
+}
+.footerDiv h3 {
+ font-size: 60px;
+ color: pink;
+ position: absolute;
+ width: 100%;
+ height: 100%;
+ margin: 0;
+ line-height: 50px;
+ text-align: center;
+ white-space: nowrap;
+ /* Starting position */
+ -moz-transform:translateX(100%);
+ -webkit-transform:translateX(100%);	
+ transform:translateX(100%);
+ /* Apply animation to this element */	
+ -moz-animation: footerDiv 30s linear infinite;
+ -webkit-animation: footerDiv 30s linear infinite;
+ animation: footerDiv 30s linear infinite;
+}
+/* Move it (define the animation) */
+@-moz-keyframes footerDiv {
+ 0%   { -moz-transform: translateX(100%); }
+ 100% { -moz-transform: translateX(-200%); }
+}
+@-webkit-keyframes footerDiv {
+ 0%   { -webkit-transform: translateX(100%); }
+ 100% { -webkit-transform: translateX(-200%); }
+}
+@keyframes footerDiv {
+ 0%   { 
+ -moz-transform: translateX(100%); /* Firefox bug fix */
+ -webkit-transform: translateX(100%); /* Firefox bug fix */
+ transform: translateX(100%); 		
+ }
+ 100% { 
+ -moz-transform: translateX(-200%); /* Firefox bug fix */
+ -webkit-transform: translateX(-200%); /* Firefox bug fix */
+ transform: translateX(-200%); 
+ }
+}
