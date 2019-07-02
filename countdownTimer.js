@@ -11,12 +11,24 @@ function getTimeRemaining(endtime) {
     };
 }
 
+function initialiseTable() {
+    html = "<table><tr>";
+    for (var i=1; i<raceEvents.length; i++) {
+        html += "<td id='name"+i+"'></td>";
+        html += "<td id='timeRemaining"+i+"'></td>";
+        html += "</tr><tr>";
+    };
+    html += "</tr></table>";
+    document.getElementById("upcomingEvents").innerHTML = html;
+}
+
 function initializeClock(id, endtime) {
     var clock = document.getElementById(id);
     var hoursSpan = clock.querySelector('.hours');
     var minutesSpan = clock.querySelector('.minutes');
     var secondsSpan = clock.querySelector('.seconds');
-    var eventName = clock.querySelector('.event');
+
+    initialiseTable();
 
     function updateClock() {
         // show current time
@@ -30,6 +42,19 @@ function initializeClock(id, endtime) {
         var time = h + ":" + m + ":" + s;
         document.getElementById("currentTime").innerText = time;
 
+        //update upcoming table
+        for (var i=1; i<raceEvents.length; i++) {
+            var nameElm = "name"+i;
+            var timeElm = "timeRemaining"+i; 
+            document.getElementById(nameElm).innerHTML = raceEvents[i].name;
+            var t = getTimeRemaining(raceEvents[i].starttime);
+            var hoursL = ('0' + t.hours).slice(-2);
+            var minutesL = ('0' + t.minutes).slice(-2);
+            var secondsL = ('0' + t.seconds).slice(-2);
+            var timeL = hoursL+":"+minutesL+":"+secondsL;
+            document.getElementById(timeElm).innerHTML = timeL
+        }
+
         // calc and display remaining time
         var t = getTimeRemaining(endtime);
         document.getElementById("clockdivText").innerHTML = "<u>"+raceEvents[0].name+"</u>";
@@ -41,6 +66,7 @@ function initializeClock(id, endtime) {
                 clearInterval(timeinterval);
             }
             raceEvents.shift();
+            initialiseTable();
             endtime = new Date(Date.parse(raceEvents[0].starttime));
         }
     }

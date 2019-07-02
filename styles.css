@@ -27,3 +27,25 @@ body{
     text-align: center;
     font-size: 240px;
 }
+
+#header{
+    font-family: sans-serif;
+    color: pink;
+    font-weight: 100;
+    text-align: center;
+    font-size: 60px;
+}
+
+table {
+    border-collapse: collapse;
+}
+  
+table, th, td {
+    border: 1px solid white;
+    padding: 20px;
+    font-family: sans-serif;
+    color: white;
+    font-weight: 100;
+    text-align: left;
+    font-size: 40px;
+}

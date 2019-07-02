@@ -1,1 +1,1 @@
-events = '[{"name": "Practice 1","starttime": "2019-07-01 23:05"},{"name": "Practice 2","starttime": "2019-07-01 23:07"},{"name": "Race 1","starttime": "2019-07-01 23:07:45"},{"name": "Race 2","starttime": "2019-07-02 06:00"}]'
+events = '[{"name": "Practice 1","starttime": "2019-07-02 11:55:00"},{"name": "Practice 2","starttime": "2019-07-02 11:57:00"},{"name": "Race 1","starttime": "2019-07-02 11:59:00"},{"name": "Race 2","starttime": "2019-07-02 12:15:00"}]'
